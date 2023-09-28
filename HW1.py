@@ -1,5 +1,5 @@
-# HW1.py
-# Author:
+#HW1.py
+# Author: James Railey Cabrera
 
 # Question 1:
 # Print Hello World like we did in class
@@ -84,3 +84,63 @@
 #  *****   |
 #   ***    |
 #    *     |
+
+
+print("Hello World")
+print("Railey Cabrera")
+print('18')
+print("blue")
+print("dog")
+myName = "Railey Cabrera"
+myAge = '18'
+myColor = "blue"
+myAnimal = "dog"
+print("Hello, my name is " + myName + " I am " + myAge + " years old. My favorite color is " + myColor + " and my favorite animal is " + myAnimal + ". ")
+
+add = 2 + 2
+print(add)
+multiply = 3 * 4
+print(multiply)
+subtract = 5 - 6
+print(subtract)
+divide = 8 / 2
+print(divide)
+
+num1 = 2
+num2 = 3
+num3 = 4
+num4 = 5
+
+num1 + num2
+print(num1 + num2)
+num3 * num4
+print(num3 * num4)  
+num4 - num1
+print(num4 - num1)
+num2 / num1 
+print(num2 / num1)
+
+name = input("What is your name? ")
+print("Hello, " + name + ". Please enter three numbers.")
+
+nom1 = float(input("Enter first number: "))
+nom2 = float(input("Enter second number: "))
+nom3 = float(input("Enter third number: "))
+
+print("The sum of the three numbers is " + str(nom1 + nom2 + nom3))
+print("The product of the three numbers is " + str(nom1* nom2 *nom3))
+print("The average of the three numbers is " + str((nom1 + nom2 + nom3) / 3))
+round(nom1)
+round(nom2)
+round(nom3) 
+print("The sum of the three rounded numbers divided by 3 is " + str((nom1 + nom2 + nom3) / 3))
+print("The average of the three numbers is " + str((nom1 + nom2 + nom3) /3))
+
+symbol = input("Enter a symbol: ")
+print(" " + " " + " " + symbol + "    |")
+print(" " + " " + symbol * 3 + "   |")
+print(" " + symbol * 5 + "  |")
+print(symbol * 7 + " |")
+print(" " + symbol * 5 + "  |")
+print(" " + " " + symbol * 3 + "   |")
+print(" " + " " + " " + symbol + "    |")
