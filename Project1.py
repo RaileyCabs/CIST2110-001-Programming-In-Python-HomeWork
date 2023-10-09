@@ -1,5 +1,5 @@
 # Project1.py
-# Author:
+# Author: James Railey Cabrera
 
 
 # This project is meant to test your ability from everything we have learned so far in class
@@ -34,3 +34,39 @@
 # Ensure that user input is cast and checked appropriately to avoid errors during execution.
 # Error Handling:
 # Implement basic error handling to manage invalid inputs from the user (e.g., an answer other than a, b, c, or d).
+
+# Quiz game
+# Write a function that displays a welcome message to the user and explains the rules of the game
+def welcome_message():
+    print("Welcome to Jolly Quiz!")
+    print("Get the right answer and you get a Jolly Hotdog! ")
+    print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
+    print ("")
+    print ("")
+    print ("")
+welcome_message()
+score = 0
+# question 1
+answer1 = input("What is the capital of the Philippines? \n a. Manila \n b. Cebu \n c. Davao \n d. Quezon City \n")
+if input == "a":
+    print("Correct! You get 1 Jolly Hotog!")
+    score += 1
+else: 
+    print(str("Wrong! The correct answer is a. Manila"))
+    score = 0
+
+#question 2
+answer2 = input("How many Islands are there in the Philippines? \n a. 6,942 \n b. 1000 \n c. 3 \n d. 7,641 \n")
+if input == "d":
+    print("Correct! You get 1 Jolly Hotog!")
+    score = 1 + score
+else: 
+    print("Wow, ang galing! (wow, well done!) The correct answer is d. 7,641")
+    score = 0
+# question 3
+answer3 = input("What is the most famous sport in the Philippines? \n a. Billiars \n b. Basketball \n c. Boxing \n d. Cockfighting \n")
+if input == "b":
+    print("Correct! You get 1 Jolly Hotog!") 
+    score = 1 + score
+else:
+    
