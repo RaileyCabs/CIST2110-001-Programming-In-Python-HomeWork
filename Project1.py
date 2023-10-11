@@ -37,36 +37,35 @@
 
 # Quiz game
 # Write a function that displays a welcome message to the user and explains the rules of the game
+
 def welcome_message():
     print("Welcome to Jolly Quiz!")
     print("Get the right answer and you get a Jolly Hotdog! ")
     print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
-    print ("")
-    print ("")
-    print ("")
-welcome_message()
-score = 0
-# question 1
-answer1 = input("What is the capital of the Philippines? \n a. Manila \n b. Cebu \n c. Davao \n d. Quezon City \n")
-if input == "a":
-    print("Correct! You get 1 Jolly Hotog!")
-    score += 1
-else: 
-    print(str("Wrong! The correct answer is a. Manila"))
-    score = 0
+print("  .-=-.  ")
+print(" / o o \ ")
+print("/   -   \\")
+print("|       |")
+print(" \\  \\  / ")
+print("   `--'   ")
 
-#question 2
-answer2 = input("How many Islands are there in the Philippines? \n a. 6,942 \n b. 1000 \n c. 3 \n d. 7,641 \n")
-if input == "d":
-    print("Correct! You get 1 Jolly Hotog!")
-    score = 1 + score
-else: 
-    print("Wow, ang galing! (wow, well done!) The correct answer is d. 7,641")
-    score = 0
-# question 3
-answer3 = input("What is the most famous sport in the Philippines? \n a. Billiars \n b. Basketball \n c. Boxing \n d. Cockfighting \n")
-if input == "b":
-    print("Correct! You get 1 Jolly Hotog!") 
-    score = 1 + score
-else:
-    
+welcome_message()
+def ask_question(question, option_1, option_2, option_3, option_4, correct_answer):
+    print(question)
+    print(option_1)
+    print(option_2)
+    print(option_3)
+    print(option_4)
+    answer = input("Enter your answer: ")
+    if answer == correct_answer:
+        print("Correct! You get 1 Jolly Hotog!")
+        return True
+    else:
+        print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct_answer) 
+        return False
+ask_question("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a")
+ask_question("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d")
+ask_question("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b")
+ask_question("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a")
+ask_question("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a")
+
