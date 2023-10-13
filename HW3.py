@@ -7,14 +7,22 @@
 # Write a function that takes in a number and returns that number squared
 # IE. If the user inputs 3, the function should return 9
 
+def squared(num):
+    return num**2
+
 # Question 2:
 # Write a function that takes in a string, a letter, and a number and returns the string with the letter replaced at the number index
 # IE. If the user inputs "Hello World", "a", and 3, the function should return "Helao World"
-
+def replace(string, letter, number):
+    return string[:number] + letter + string[number+1:]
 # Question 3:
 # Write a function that takes in a number, a lower bound, and an upper bound and returns whether the number is within the bounds
 # IE. If the user inputs 5, 1, and 10, the function should return True
-
+def boundy(num, lower, upper):
+    if num >= lower and num <= upper:
+        return True
+    else:
+        return False
 # Question 4:
 # Write a function that asks the user for their name, age, and favorite color. Then write a function that accepts those three parameters and prints them out in a sentence
 # IE. If the user inputs "John", 20, and "blue", the function should print "Hello, my name is John. I am 20 years old. My favorite color is blue."
@@ -37,3 +45,11 @@
 # Question 8:
 # import the os module and use it to display the current working directory. This time import the module using the from keyword
 # hint: use the getcwd() function
+
+#q how to activate python3 -m venv venv
+#a 
+# 1. cd to the directory where you want to create the virtual environment.
+# 2. python3 -m venv venv
+#q how to do no.1 
+#a
+

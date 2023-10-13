@@ -50,22 +50,37 @@ print(" \\  \\  / ")
 print("   `--'   ")
 
 welcome_message()
-def ask_question(question, option_1, option_2, option_3, option_4, correct_answer):
+
+def ask_question(question, option_1, option_2, option_3, option_4, correct_answer, score):
     print(question)
     print(option_1)
     print(option_2)
     print(option_3)
     print(option_4)
-    answer = input("Enter your answer: ")
-    if answer == correct_answer:
-        print("Correct! You get 1 Jolly Hotog!")
-        return True
-    else:
-        print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct_answer) 
-        return False
-ask_question("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a")
-ask_question("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d")
-ask_question("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b")
-ask_question("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a")
-ask_question("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a")
+    while True:
+            while True:
+                try:
+                    answer = input("Enter your answer: ").strip().lower()
+                    if answer in ["a", "b", "c", "d"]:
+                        break
+                    else:
+                        print("Please input a, b, c, or d.")
+                except:
+                    print("Invalid input. Please try again.")
+
+            if answer == correct_answer:
+                print("Correct! You get 1 Jolly Hotog!")
+                score += 1
+            else:
+                print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct_answer) 
+            return score
+    
+score = 0 
+score = ask_question("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a", score)
+score = ask_question("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d", score)
+score = ask_question("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b", score)
+score = ask_question("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a", score)
+score = ask_question("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a", score)
+print("Your final Jollyscore is: " + str(score))
+print("Thank you for playing Jolly Quiz! ( ͡° ͜ʖ ͡°) " )
 
