@@ -44,38 +44,46 @@ def welcome_message():
     print("Get the right answer and you get a Jolly Hotdog! ")
     print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
 
-welcome_message()
+def ask_question(question,options,correct_answer):
+     print(question)
+     for option in options:
+          print(option)
 
-def ask_question(question, option_1, option_2, option_3, option_4, correct_answer, score):
+while True:
+    user_answer = input("Enter your answer (a,b,c, or d): ").strip().lower()
+    if user_answer in [ 'a', 'b', 'c', 'd' ]:
+        break
+    else:
+        print("a, b, c, or d only buddy, try again.")
+
+def question_set(question,a,b,c,d,correct):
     print(question)
-    print(option_1)
-    print(option_2)
-    print(option_3)
-    print(option_4)
-    while True:
-            while True:
-                try:
-                    answer = input("Enter your answer: ").strip().lower()
-                    if answer in ["a", "b", "c", "d"]:
-                        break
-                    else:
-                        print("Please input a, b, c, or d.")
-                except:
-                    print("Invalid input. Please try again.")
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+    user_answer = input("Enter your answer: ")
+    if user_answer == correct:
+        print("Correct! You get 1 Jolly Hotog!")
+        return True
+    else:
+        print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct) 
+        return False
 
-            if answer == correct_answer:
-                print("Correct! You get 1 Jolly Hotog!")
-                score += 1
-            else:
-                print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct_answer) 
-            return score
-    
-score = 0 
-score = ask_question("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a", score)
-score = ask_question("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d", score)
-score = ask_question("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b", score)
-score = ask_question("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a", score)
-score = ask_question("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a", score)
-print("Your final Jollyscore is: " + str(score))
-print("Thank you for playing Jolly Quiz! ( ͡° ͜ʖ ͡°) " )
+def track_score(score):
+    score = 0 
+    score += question_set("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a")
+    score += question_set("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d")
+    score += question_set("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b")
+    score += question_set("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a")
+    score += question_set("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a")
+    return score
 
+def final_score(score):
+    print("Your final Jollyscore is: " + str(score))
+    print("Thank you for playing the Jolly Quiz! " )
+
+if __name__ == "__main__":
+        welcome_message()
+        user_score = track_score(0)
+        final_score(user_score)
