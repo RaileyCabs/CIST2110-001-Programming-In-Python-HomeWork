@@ -44,18 +44,6 @@ def welcome_message():
     print("Get the right answer and you get a Jolly Hotdog! ")
     print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
 
-def ask_question(question,options,correct_answer):
-     print(question)
-     for option in options:
-          print(option)
-
-while True:
-    user_answer = input("Enter your answer (a,b,c, or d): ").strip().lower()
-    if user_answer in [ 'a', 'b', 'c', 'd' ]:
-        break
-    else:
-        print("a, b, c, or d only buddy, try again.")
-
 def question_set(question,a,b,c,d,correct):
     print(question)
     print(a)
