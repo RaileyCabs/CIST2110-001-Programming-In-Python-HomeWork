@@ -1,7 +1,5 @@
 # Project1.py
 # Author: James Railey Cabrera
-
-
 # This project is meant to test your ability from everything we have learned so far in class
 # You will need to use variables, if statements, loops, and functions
 
@@ -17,6 +15,7 @@
 # Use if or if-else statements to check if the answer is correct.
 # If the answer is correct, display a positive feedback message and add points to the user's score.
 # If the answer is incorrect, display a negative feedback message and provide the correct answer.
+
 # Score Tracking:
 
 # Keep track of the user's score throughout the game.
@@ -27,8 +26,10 @@
 # an example would be def ask_question(question, option_1, option_2, option_3, option_4, correct_answer):
 # the return value should be a boolean (True or False) for whether the user was correct
 
+   
 # Create a function to display the final score, which takes the score as a parameter and displays a message.
 # Loops:
+
 # Use a for or while loop to iterate through the questions.
 # Variable Casting:
 # Ensure that user input is cast and checked appropriately to avoid errors during execution.
@@ -42,12 +43,6 @@ def welcome_message():
     print("Welcome to Jolly Quiz!")
     print("Get the right answer and you get a Jolly Hotdog! ")
     print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
-print("  .-=-.  ")
-print(" / o o \ ")
-print("/   -   \\")
-print("|       |")
-print(" \\  \\  / ")
-print("   `--'   ")
 
 welcome_message()
 
