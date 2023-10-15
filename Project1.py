@@ -39,39 +39,53 @@
 # Quiz game
 # Write a function that displays a welcome message to the user and explains the rules of the game
 
-def welcome_message():
+def welcome_message() -> None:
     print("Welcome to Jolly Quiz!")
-    print("Get the right answer and you get a Jolly Hotdog! ")
+    print("Get the right answer and you get a Jolly Hotdog!")
     print("Good luck! ( (´∀｀)つ―⊂ZZZ⊃ ")
 
-def question_set(question,a,b,c,d,correct):
+def question_set(question: str, a: str, b: str, c: str, d: str, correct: str) -> bool:
     print(question)
     print(a)
     print(b)
     print(c)
     print(d)
-    user_answer = input("Enter your answer: ")
-    if user_answer == correct:
-        print("Correct! You get 1 Jolly Hotog!")
-        return True
-    else:
-        print("You are wrong buddy, no Jolly Hotdog for you!\n"+"the correct answer is: " + correct) 
-        return False
+    while True:
+        user_answer = input("Enter your answer: ").strip().lower()
+        if user_answer in ["a", "b", "c", "d"]:
+            if user_answer == correct:
+                print("Correct! You get 1 Jolly Hotdog!")
+                return True
+            else:
+                print("You are wrong buddy, no Jolly Hotdog for you!\n" + "the correct answer is: " + correct)
+                return False
+        else:
+            print("Please enter 'a,' 'b,' 'c,' or 'd' only. Try again.")
 
-def track_score(score):
-    score = 0 
-    score += question_set("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City","a")
-    score += question_set("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641","d")
-    score += question_set("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting","b")
-    score += question_set("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey","a")
-    score += question_set("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion","a")
+def track_score() -> int:
+    score = 0
+    score += question_set("What is the capital of the Philippines?", "a. Manila", "b. Cebu", "c. Davao", "d. Quezon City", "a")
+    score += question_set("How many Islands are there in the Philippines?", "a. 6,942", "b. 1000", "c. 3", "d. 7,641", "d")
+    score += question_set("What is the most famous sport in the Philippines?", "a. Billiards", "b. Basketball", "c. Boxing", "d. Cockfighting", "b")
+    score += question_set("What is the national animal of the Philippines?", "a. Carabao", "b. Tarsier", "c. Dog", "d. Monkey", "a")
+    score += question_set("What is the national flower of the Philippines?", "a. Sampaguita", "b. Rose", "c. Sunflower", "d. Dandelion", "a")
     return score
 
-def final_score(score):
+def final_score(score: int) -> None:
     print("Your final Jollyscore is: " + str(score))
-    print("Thank you for playing the Jolly Quiz! " )
+    print("Thank you for playing the Jolly Quiz!")
 
 if __name__ == "__main__":
+    while True:
         welcome_message()
-        user_score = track_score(0)
+        user_score = track_score()
         final_score(user_score)
+        while True:
+            retry = input("Do you want to try the quiz again? (yes or no): ").strip().lower()
+            if retry == "yes":
+                break
+            elif retry == "no":
+                print("Thank you for playing the Jolly Quiz!")
+                exit(0)
+            else:
+                print("Please enter 'yes' or 'no'.")
