@@ -1,5 +1,5 @@
 # test.py
-# Author:
+# Author: James Railey cabrera
 
 import pytest
 from HW4 import add, subtract, divide, multiply, greet, square, is_even, grade_calculator, speed_check, is_leap_year
@@ -54,3 +54,4 @@ def test_is_leap_year():
     assert is_leap_year(2021) == False, "Leap year check failed for non-leap year"
     assert is_leap_year(2000) == True, "Leap year check failed for century leap year"
     assert is_leap_year(1900) == False, "Leap year check failed for century non-leap year"
+
