@@ -5,21 +5,37 @@
 
 # Copy the code from Lab9.py into this file. I'll add some comments to help you out.
 
+
 # Import statements (activate venv and install streamlit if you haven't already)
 import streamlit as st
 import datetime as dt
 
 # Streamlit title, subtitle, date, and button
 
-
+st.title("webby applicationy")
+st.subheader("will count number of days until a certain date") 
+date = st.date_input("enter a date: ")
+button = st.button("calculate")
 
 
 # The calculate_days function from Lab9.py
 
+def calculate_days(date) -> int:
+    current_date = dt.datetime.now().date()
+    days_difference = (date - current_date).days
+    return days_difference
 
-
-
-
+def app():
+    if button:
+        try:
+            result = calculate_days(date)
+            st.write("Number of days until the entered date:", result)
+        except ValueError:
+            st.write("Wrong date fool")
+            return
+        st.write(f"current date: {dt.datetime.now().date()}")
+        st.write(f"target date: {date}")
+        st.write(f"days until target date: {result}")
 
 
 # START OF HOMEWORK Questions
